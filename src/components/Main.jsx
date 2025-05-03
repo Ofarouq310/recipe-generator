@@ -1,5 +1,6 @@
 import { useState } from "react"
 import IngredientsList from "./IngredientsList"
+import SuggestedRecipe from "./SuggestedRecipe"
 
 export default function Main() {
 
@@ -25,6 +26,7 @@ const addIngredient = (formData) => {
                 <button>+ Add ingredient</button>
             </form>
             <IngredientsList ingredients={ingredients} />
+            <SuggestedRecipe />
         </main>
     )
 }
