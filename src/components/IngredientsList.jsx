@@ -1,11 +1,18 @@
 export default function IngredientsList(props) {
-    const ingredientsListItems = props.ingredients.map(ingredient => (
-        <li key={ingredient}>{ingredient}</li>
+    const ingredientsListItems = props.ingredients.map((ingredient, index) => (
+        <li key={index}>{ingredient}</li>
     ))
     return (
-        <section>
-            <h2>Ingredients on hand:</h2>
-            <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+        <section className="ingredients-container">
+            {
+            ingredientsListItems.length > 0 && 
+            <div>
+                <h2>Ingredients on hand:</h2>
+                <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+            </div>
+            }
+            {
+            ingredientsListItems.length > 3 &&
             <div className="get-recipe-container">
                 <div>
                     <h3>Ready for a recipe?</h3>
@@ -13,6 +20,7 @@ export default function IngredientsList(props) {
                 </div>
                 <button>Get a recipe</button>
             </div>
+            }
         </section>
     )
 }
