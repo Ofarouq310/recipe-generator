@@ -4,7 +4,7 @@ export default function SuggestedRecipe(props){
     return (
         <>
             <section className='suggested-recipe-container'>
-                <h2>Suggested Recipe:</h2>
+                <h4>Suggested Recipe:</h4>
                 <ReactMarkdown>{props.recipe}</ReactMarkdown>
             </section>
         </>

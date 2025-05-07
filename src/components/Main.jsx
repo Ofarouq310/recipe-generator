@@ -4,6 +4,7 @@ import SuggestedRecipe from "./SuggestedRecipe"
 import {getRecipeFromMistral} from "../ai.js"
 
 
+
 export default function Main() {
 
     const [ingredients, setIngredients] = useState([])
@@ -24,6 +25,18 @@ export default function Main() {
 
     return (
         <main>
+            <div>
+                <i className="fa-solid fa-utensils"></i>
+                <i className="fa-solid fa-bowl-rice"></i>
+                <h1>Recipe Generator</h1>
+                <p>Generate delicious recipes using AI</p>
+            </div>
+            <div className="recipes-photos">
+                <div className="cuisine-one"></div>
+                <div className="cuisine-two"></div>
+                <div className="cuisine-three"></div>
+                <div className="cuisine-four"></div>
+            </div>
             <form action={addIngredient} className="add-ingredient-form">
                 <input 
                     type="text"
