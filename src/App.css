@@ -1,53 +1,162 @@
-header {
-    background: white;
-    color: black;
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    box-shadow:
-        0px 2px 7px -2px rgba(0, 0, 0, 0.26);
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #F9FAFB;
+    color: #353f4d;
 }
 
 h1 {
-    font-size: 5vw;
-    font-weight: 400;
-    margin-left: 7px;
+    font-weight: 900;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+h3, h4 {
+    font-size: 24px;
+    font-weight: 600;
 }
 
 .fa-bowl-rice {
-    font-size: 5.5vw;
+    font-size: 26px;
+}
+
+.fa-utensils {
+    font-size: 24px;
+    padding-right: 3px;
 }
 
 main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 30px;
-    width: 100%;
-
+    width: 90%;
+    margin-top: 15%;
+    margin-inline: auto;
 }
 
+.recipes-photos {
+    min-width: 250px;
+    max-width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+    justify-items: stretch;
+    align-items: stretch;
+    margin-inline: auto;
+}
+
+.cuisine-one {
+    width: 100%;
+    height: 100px;
+    background-image: url(/src/assets/images/0265670.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.cuisine-two {
+    width: 100%;
+    height: 100px;
+    background-image: url(/src/assets/images/Hot_Chocolate_Lasagna_001-2890859ae4104347b6770148e71d817b.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.cuisine-three {
+    width: 100%;
+    height: 100px;
+    background-image: url(/src/assets/images/quick-chicken-marsala-1801-ckl-8034795-2000-6a40f2cdfc664500973b5c9210faaa92.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.cuisine-four {
+    width: 100%;
+    height: 100px;
+    background-image: url(/src/assets/images/raspberry-oreo-no-bake-dessert-image-500x500.jpg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+.cuisine-one::after,
+.cuisine-two::after, 
+.cuisine-three::after,
+.cuisine-four::after {
+    content: 'Recipe';
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    border-radius: 7px;
+}
+.cuisine-one::after {
+    content: 'Pick';
+}
+.cuisine-two::after {
+    content: 'Ingredients';
+}
+.cuisine-three::after {
+    content: 'Get';
+}
+
+.cuisine-one:hover::after,
+.cuisine-two:hover::after,
+.cuisine-three:hover::after,
+.cuisine-four:hover::after {
+    opacity: 1;
+}
+
+
 form {
-    width: 80%;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 15%;
 }
 
 form>input {
-    width: 80%;
+    width: 100%;
     padding: 10px 8px;
     border-radius: 6px;
     border: 1px solid #ccc;
 }
 
 form>button {
+    width:190%;
     padding: 9px 14px;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -60,9 +169,6 @@ form>button {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 80%;
-    margin-inline: auto;
-
     ul {
         display: flex;
         flex-direction: column;
@@ -106,9 +212,41 @@ form>button {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 80%;
     margin-inline: auto;
     margin-bottom: 5%;
     color: #475467;
     line-height: 28px;
 }
+
+@media screen and (min-width: 768px) {
+
+    main {
+        width: 80%;
+        margin-top: 5%;
+    }
+
+    .recipes-photos {
+        min-width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .cuisine-one {
+        width: 100%;
+    }
+
+    .cuisine-one:hover,
+    .cuisine-two:hover,
+    .cuisine-three:hover,
+    .cuisine-four:hover {
+        transform: scale(1.02);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .cuisine-one::after,
+    .cuisine-two::after,
+    .cuisine-three::after,
+    .cuisine-four::after {
+        font-size: 2rem;
+    }
+
+}   
