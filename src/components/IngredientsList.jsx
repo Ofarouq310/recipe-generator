@@ -3,14 +3,17 @@ export default function IngredientsList(props) {
         <li key={index}>{ingredient}</li>
     ))
     return (
-        <section className="ingredients-container">
+        <>
+    
             {
             ingredientsListItems.length > 0 && 
-            <div>
-                <h2>Ingredients on hand:</h2>
+            <section className="ingredients-on-hand">
+                <h2 id="on-hand-header"><i className="fa-solid fa-check"></i> Ingredients on hand:</h2>
                 <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
-            </div>
+            </section>
             }
+
+        <section className="get-recipe-container">
             {
             ingredientsListItems.length > 3 &&
             <div className="get-recipe-container">
@@ -22,5 +25,7 @@ export default function IngredientsList(props) {
             </div>
             }
         </section>
+        
+        </>
     )
 }
